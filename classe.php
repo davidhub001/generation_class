@@ -8,7 +8,7 @@ $text .= "class ".ucwords($class_name)."\n";
 $text .= "{\n";
 $champ = explode(',',$reg_table[2][0]);
 foreach($champ as $cles=>$val):
-$text .=  "\t private $".$val.";\n";
+  $text .=  "\t private $".$val.";\n";
 endforeach;
 $text .= "}\n?>";
 file_put_contents($nom_class,$text);
