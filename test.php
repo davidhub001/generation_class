@@ -1,26 +1,42 @@
 <?php
 class Test
 {
-  private $a;
-  private $b;
-  private $c;
-  public function getA(){
-    return $this->a;
+  private $id;
+  private $nom;
+  private $prenom;
+
+   public function __construct(array $data){
+    $this->hydrate($data);
    }
-  public function setA($a){
-   $this->a = $a;
+  public function hydrate(array $data){
+    foreach($data as $key => $value){ 
+      $methode = 'set'.ucwords($key); 
+      if(method_exists($this,$methode)){ 
+        $this->$methode($value); 
+      }
+    }
    }
-  public function getB(){
-    return $this->b;
+
+   public function getId(){
+    return $this->id;
    }
-  public function setB($b){
-   $this->b = $b;
+
+   public function setId($id){
+   $this->id = $id;
    }
-  public function getC(){
-    return $this->c;
+  public function getNom(){
+    return $this->nom;
    }
-  public function setC($c){
-   $this->c = $c;
+
+   public function setNom($nom){
+   $this->nom = $nom;
+   }
+  public function getPrenom(){
+    return $this->prenom;
+   }
+
+   public function setPrenom($prenom){
+   $this->prenom = $prenom;
    }
 }
 ?>
