@@ -1,5 +1,5 @@
 <?php
-$table = (string)readline("Entrer le table ex: nomtable(champ,..,champ) : ");
+$table = (string)readline("Entrer la table ex: nomtable(champ,..,champ) : ");
 $i ="\t";
 preg_match_all('/(.*)\((.*)\)/', $table, $reg_table);
 $nom_class = $reg_table[1][0].'.php';
